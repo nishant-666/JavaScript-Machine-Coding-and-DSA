@@ -28,22 +28,22 @@ function debouncedSearch(searchInput, interval, callback) {
 function callbackFn(filteredData) {
   console.log(filteredData);
 
-  if (filteredData.length > 0) {
-    let p = document.createElement("div");
-    p.innerHTML = filteredData.map((d) => `<p>${d.name}</p>`).join("");
+  let p = document.createElement("div");
+  p.innerHTML = filteredData.map((d) => `<p>${d.name}</p>`).join("");
 
-    container.append(p);
-  }
+  container.append(p);
 }
 
 function searchData() {
-  const debouncedSearchFunction = debouncedSearch(
-    searchInput,
-    1000,
-    callbackFn
-  );
+  if (searchInput.value.length > 0) {
+    const debouncedSearchFunction = debouncedSearch(
+      searchInput,
+      1000,
+      callbackFn
+    );
 
-  debouncedSearchFunction();
+    debouncedSearchFunction();
 
-  container.innerHTML = "";
+    container.innerHTML = "";
+  }
 }
