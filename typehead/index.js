@@ -1,13 +1,6 @@
 const searchInput = document.getElementById("search-input");
 searchInput.addEventListener("input", searchData);
 
-(async function fetchData() {
-  let response = await fetch("https://jsonplaceholder.typicode.com/users");
-  let data = await response.json();
-
-  APIData.push(...data);
-})();
-
 let APIData = [];
 
 function debouncedSearch(searchInput, interval, callback) {
@@ -47,3 +40,10 @@ function searchData() {
     container.innerHTML = "";
   }
 }
+
+(async function fetchData() {
+  let response = await fetch("https://jsonplaceholder.typicode.com/users");
+  let data = await response.json();
+
+  APIData.push(...data);
+})();
