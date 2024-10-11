@@ -1,0 +1,15 @@
+body {
+  text-align: center;
+}
+
+.toast {
+  min-width: 100px;
+  color: white;
+  padding: 1rem;
+  position: absolute;
+  border-radius: 1rem;
+}
+
+.hide-toast {
+  visibility: hidden;
+}

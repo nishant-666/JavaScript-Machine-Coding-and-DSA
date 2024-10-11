@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+#comment-section {
+  width: 50%;
+  margin: 0 auto;
+}
+
+#comments-container {
+  margin-top: 20px;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.comment .reply-button {
+  margin-left: 20px;
+  cursor: pointer;
+  color: blue;
+}
+
+.comment .replies {
+  margin-left: 20px;
+  margin-top: 10px;
+}
