@@ -16,3 +16,8 @@ let output = memoize();
 
 console.log(output(3));
 console.log(output(3));
+
+console.log(output(1));
+console.log(output(4));
+
+console.log(output(3));
