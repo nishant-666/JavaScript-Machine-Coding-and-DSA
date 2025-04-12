@@ -1,17 +1,24 @@
-var longestPalindrome = function (s) {
-  let first = 0;
+var longestPalindrome = function (s, t) {
+  const combinedString = `${s}${t}`;
 
-  let last = s.length - 1;
-  let output = "";
-  while (first <= last) {
-    if (s[first] === s[last]) {
+  let maxPalindrome = "";
+
+  let count = 1;
+
+  for (let i = 0; i < combinedString.length; i++) {
+    for (let j = i + 1; j <= combinedString.length; j++) {
+      const substring = combinedString.slice(i, j);
+      if (isPalindrome(substring) && substring.length > maxPalindrome.length) {
+        maxPalindrome = substring;
+      }
     }
-
-    first++;
-    last--;
   }
 
-  return output;
+  return maxPalindrome.length;
 };
 
-console.log(longestPalindrome("babad"));
+const isPalindrome = (str) => {
+  return str === str.split("").reverse().join("");
+};
+
+console.log(longestPalindrome("a", "a"));
