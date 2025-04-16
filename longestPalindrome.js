@@ -3,8 +3,6 @@ var longestPalindrome = function (s, t) {
 
   let maxPalindrome = "";
 
-  let count = 1;
-
   for (let i = 0; i < combinedString.length; i++) {
     for (let j = i + 1; j <= combinedString.length; j++) {
       const substring = combinedString.slice(i, j);
