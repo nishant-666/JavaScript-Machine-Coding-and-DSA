@@ -1,11 +1,9 @@
-var rotate = function (nums, k) {
-  k = k % nums.length;
-  if (k !== 0) {
-    let temp = nums.slice(-k).concat(nums.slice(0, -k));
-    for (let i = 0; i < nums.length; i++) {
-      nums[i] = temp[i];
-    }
-  }
-};
+function rotateArray(arr, k) {
+  const n = arr.length;
+  k = k % n; // Handle k > n
 
-console.log(rotate([-1, -100, 3, 99], 2));
+  return arr.slice(-k).concat(arr.slice(0, n - k));
+}
+
+const arr = [1, 2, 3, 4, 5];
+console.log(rotateArray(arr, 2)); // [3, 4, 5, 1, 2]
